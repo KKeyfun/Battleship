@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header">Battleship</h1>
+        </header>
+        <div class="message">Placeholder <button class="rotate">Rotate</button></div>
+        <div class="boardContainer">
+            <div class="board playerOne">
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="0"></div>
+                    <div class="tile" data-x="1" data-y="0"></div>
+                    <div class="tile" data-x="2" data-y="0"></div>
+                    <div class="tile" data-x="3" data-y="0"></div>
+                    <div class="tile" data-x="4" data-y="0"></div>
+                    <div class="tile" data-x="5" data-y="0"></div>
+                    <div class="tile" data-x="6" data-y="0"></div>
+                    <div class="tile" data-x="7" data-y="0"></div>
+                    <div class="tile" data-x="8" data-y="0"></div>
+                    <div class="tile" data-x="9" data-y="0"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="1"></div>
+                    <div class="tile" data-x="1" data-y="1"></div>
+                    <div class="tile" data-x="2" data-y="1"></div>
+                    <div class="tile" data-x="3" data-y="1"></div>
+                    <div class="tile" data-x="4" data-y="1"></div>
+                    <div class="tile" data-x="5" data-y="1"></div>
+                    <div class="tile" data-x="6" data-y="1"></div>
+                    <div class="tile" data-x="7" data-y="1"></div>
+                    <div class="tile" data-x="8" data-y="1"></div>
+                    <div class="tile" data-x="9" data-y="1"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="2"></div>
+                    <div class="tile" data-x="1" data-y="2"></div>
+                    <div class="tile" data-x="2" data-y="2"></div>
+                    <div class="tile" data-x="3" data-y="2"></div>
+                    <div class="tile" data-x="4" data-y="2"></div>
+                    <div class="tile" data-x="5" data-y="2"></div>
+                    <div class="tile" data-x="6" data-y="2"></div>
+                    <div class="tile" data-x="7" data-y="2"></div>
+                    <div class="tile" data-x="8" data-y="2"></div>
+                    <div class="tile" data-x="9" data-y="2"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="3"></div>
+                    <div class="tile" data-x="1" data-y="3"></div>
+                    <div class="tile" data-x="2" data-y="3"></div>
+                    <div class="tile" data-x="3" data-y="3"></div>
+                    <div class="tile" data-x="4" data-y="3"></div>
+                    <div class="tile" data-x="5" data-y="3"></div>
+                    <div class="tile" data-x="6" data-y="3"></div>
+                    <div class="tile" data-x="7" data-y="3"></div>
+                    <div class="tile" data-x="8" data-y="3"></div>
+                    <div class="tile" data-x="9" data-y="3"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="4"></div>
+                    <div class="tile" data-x="1" data-y="4"></div>
+                    <div class="tile" data-x="2" data-y="4"></div>
+                    <div class="tile" data-x="3" data-y="4"></div>
+                    <div class="tile" data-x="4" data-y="4"></div>
+                    <div class="tile" data-x="5" data-y="4"></div>
+                    <div class="tile" data-x="6" data-y="4"></div>
+                    <div class="tile" data-x="7" data-y="4"></div>
+                    <div class="tile" data-x="8" data-y="4"></div>
+                    <div class="tile" data-x="9" data-y="4"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="5"></div>
+                    <div class="tile" data-x="1" data-y="5"></div>
+                    <div class="tile" data-x="2" data-y="5"></div>
+                    <div class="tile" data-x="3" data-y="5"></div>
+                    <div class="tile" data-x="4" data-y="5"></div>
+                    <div class="tile" data-x="5" data-y="5"></div>
+                    <div class="tile" data-x="6" data-y="5"></div>
+                    <div class="tile" data-x="7" data-y="5"></div>
+                    <div class="tile" data-x="8" data-y="5"></div>
+                    <div class="tile" data-x="9" data-y="5"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="6"></div>
+                    <div class="tile" data-x="1" data-y="6"></div>
+                    <div class="tile" data-x="2" data-y="6"></div>
+                    <div class="tile" data-x="3" data-y="6"></div>
+                    <div class="tile" data-x="4" data-y="6"></div>
+                    <div class="tile" data-x="5" data-y="6"></div>
+                    <div class="tile" data-x="6" data-y="6"></div>
+                    <div class="tile" data-x="7" data-y="6"></div>
+                    <div class="tile" data-x="8" data-y="6"></div>
+                    <div class="tile" data-x="9" data-y="6"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="7"></div>
+                    <div class="tile" data-x="1" data-y="7"></div>
+                    <div class="tile" data-x="2" data-y="7"></div>
+                    <div class="tile" data-x="3" data-y="7"></div>
+                    <div class="tile" data-x="4" data-y="7"></div>
+                    <div class="tile" data-x="5" data-y="7"></div>
+                    <div class="tile" data-x="6" data-y="7"></div>
+                    <div class="tile" data-x="7" data-y="7"></div>
+                    <div class="tile" data-x="8" data-y="7"></div>
+                    <div class="tile" data-x="9" data-y="7"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="8"></div>
+                    <div class="tile" data-x="1" data-y="8"></div>
+                    <div class="tile" data-x="2" data-y="8"></div>
+                    <div class="tile" data-x="3" data-y="8"></div>
+                    <div class="tile" data-x="4" data-y="8"></div>
+                    <div class="tile" data-x="5" data-y="8"></div>
+                    <div class="tile" data-x="6" data-y="8"></div>
+                    <div class="tile" data-x="7" data-y="8"></div>
+                    <div class="tile" data-x="8" data-y="8"></div>
+                    <div class="tile" data-x="9" data-y="8"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="9"></div>
+                    <div class="tile" data-x="1" data-y="9"></div>
+                    <div class="tile" data-x="2" data-y="9"></div>
+                    <div class="tile" data-x="3" data-y="9"></div>
+                    <div class="tile" data-x="4" data-y="9"></div>
+                    <div class="tile" data-x="5" data-y="9"></div>
+                    <div class="tile" data-x="6" data-y="9"></div>
+                    <div class="tile" data-x="7" data-y="9"></div>
+                    <div class="tile" data-x="8" data-y="9"></div>
+                    <div class="tile" data-x="9" data-y="9"></div>
+                </div>
+            </div>
+            <div class="board playerTwo">
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="0"></div>
+                    <div class="tile" data-x="1" data-y="0"></div>
+                    <div class="tile" data-x="2" data-y="0"></div>
+                    <div class="tile" data-x="3" data-y="0"></div>
+                    <div class="tile" data-x="4" data-y="0"></div>
+                    <div class="tile" data-x="5" data-y="0"></div>
+                    <div class="tile" data-x="6" data-y="0"></div>
+                    <div class="tile" data-x="7" data-y="0"></div>
+                    <div class="tile" data-x="8" data-y="0"></div>
+                    <div class="tile" data-x="9" data-y="0"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="1"></div>
+                    <div class="tile" data-x="1" data-y="1"></div>
+                    <div class="tile" data-x="2" data-y="1"></div>
+                    <div class="tile" data-x="3" data-y="1"></div>
+                    <div class="tile" data-x="4" data-y="1"></div>
+                    <div class="tile" data-x="5" data-y="1"></div>
+                    <div class="tile" data-x="6" data-y="1"></div>
+                    <div class="tile" data-x="7" data-y="1"></div>
+                    <div class="tile" data-x="8" data-y="1"></div>
+                    <div class="tile" data-x="9" data-y="1"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="2"></div>
+                    <div class="tile" data-x="1" data-y="2"></div>
+                    <div class="tile" data-x="2" data-y="2"></div>
+                    <div class="tile" data-x="3" data-y="2"></div>
+                    <div class="tile" data-x="4" data-y="2"></div>
+                    <div class="tile" data-x="5" data-y="2"></div>
+                    <div class="tile" data-x="6" data-y="2"></div>
+                    <div class="tile" data-x="7" data-y="2"></div>
+                    <div class="tile" data-x="8" data-y="2"></div>
+                    <div class="tile" data-x="9" data-y="2"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="3"></div>
+                    <div class="tile" data-x="1" data-y="3"></div>
+                    <div class="tile" data-x="2" data-y="3"></div>
+                    <div class="tile" data-x="3" data-y="3"></div>
+                    <div class="tile" data-x="4" data-y="3"></div>
+                    <div class="tile" data-x="5" data-y="3"></div>
+                    <div class="tile" data-x="6" data-y="3"></div>
+                    <div class="tile" data-x="7" data-y="3"></div>
+                    <div class="tile" data-x="8" data-y="3"></div>
+                    <div class="tile" data-x="9" data-y="3"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="4"></div>
+                    <div class="tile" data-x="1" data-y="4"></div>
+                    <div class="tile" data-x="2" data-y="4"></div>
+                    <div class="tile" data-x="3" data-y="4"></div>
+                    <div class="tile" data-x="4" data-y="4"></div>
+                    <div class="tile" data-x="5" data-y="4"></div>
+                    <div class="tile" data-x="6" data-y="4"></div>
+                    <div class="tile" data-x="7" data-y="4"></div>
+                    <div class="tile" data-x="8" data-y="4"></div>
+                    <div class="tile" data-x="9" data-y="4"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="5"></div>
+                    <div class="tile" data-x="1" data-y="5"></div>
+                    <div class="tile" data-x="2" data-y="5"></div>
+                    <div class="tile" data-x="3" data-y="5"></div>
+                    <div class="tile" data-x="4" data-y="5"></div>
+                    <div class="tile" data-x="5" data-y="5"></div>
+                    <div class="tile" data-x="6" data-y="5"></div>
+                    <div class="tile" data-x="7" data-y="5"></div>
+                    <div class="tile" data-x="8" data-y="5"></div>
+                    <div class="tile" data-x="9" data-y="5"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="6"></div>
+                    <div class="tile" data-x="1" data-y="6"></div>
+                    <div class="tile" data-x="2" data-y="6"></div>
+                    <div class="tile" data-x="3" data-y="6"></div>
+                    <div class="tile" data-x="4" data-y="6"></div>
+                    <div class="tile" data-x="5" data-y="6"></div>
+                    <div class="tile" data-x="6" data-y="6"></div>
+                    <div class="tile" data-x="7" data-y="6"></div>
+                    <div class="tile" data-x="8" data-y="6"></div>
+                    <div class="tile" data-x="9" data-y="6"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="7"></div>
+                    <div class="tile" data-x="1" data-y="7"></div>
+                    <div class="tile" data-x="2" data-y="7"></div>
+                    <div class="tile" data-x="3" data-y="7"></div>
+                    <div class="tile" data-x="4" data-y="7"></div>
+                    <div class="tile" data-x="5" data-y="7"></div>
+                    <div class="tile" data-x="6" data-y="7"></div>
+                    <div class="tile" data-x="7" data-y="7"></div>
+                    <div class="tile" data-x="8" data-y="7"></div>
+                    <div class="tile" data-x="9" data-y="7"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="8"></div>
+                    <div class="tile" data-x="1" data-y="8"></div>
+                    <div class="tile" data-x="2" data-y="8"></div>
+                    <div class="tile" data-x="3" data-y="8"></div>
+                    <div class="tile" data-x="4" data-y="8"></div>
+                    <div class="tile" data-x="5" data-y="8"></div>
+                    <div class="tile" data-x="6" data-y="8"></div>
+                    <div class="tile" data-x="7" data-y="8"></div>
+                    <div class="tile" data-x="8" data-y="8"></div>
+                    <div class="tile" data-x="9" data-y="8"></div>
+                </div>
+                <div class="row">
+                    <div class="tile" data-x="0" data-y="9"></div>
+                    <div class="tile" data-x="1" data-y="9"></div>
+                    <div class="tile" data-x="2" data-y="9"></div>
+                    <div class="tile" data-x="3" data-y="9"></div>
+                    <div class="tile" data-x="4" data-y="9"></div>
+                    <div class="tile" data-x="5" data-y="9"></div>
+                    <div class="tile" data-x="6" data-y="9"></div>
+                    <div class="tile" data-x="7" data-y="9"></div>
+                    <div class="tile" data-x="8" data-y="9"></div>
+                    <div class="tile" data-x="9" data-y="9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

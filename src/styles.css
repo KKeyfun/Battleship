@@ -1,0 +1,67 @@
+*,*::before,*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  /* background-color: darkgray; */
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  /* color: white; */
+  font-size: 5rem;
+
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.message {
+  font-size: 1.25rem;
+  height: 1.25rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.board.opponent {
+  display: none;
+}
+
+.boardContainer {
+  display: flex;
+  gap:3rem;
+  
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  height: 30rem;
+  width: 30rem;
+}
+
+.row {
+  display: flex;
+  flex-basis: 10%;
+  width: 100%;
+}
+
+.tile {
+  border: 1px solid black;
+  flex-grow: 1;
+}
+
+.invalid {
+  cursor: not-allowed;
+}
