@@ -5,6 +5,7 @@ const ship = (name, size) => {
     name,
     size,
     coordinates: [],
+    axis: 'X',
     hit() {
       this._hit += 1;
     },
