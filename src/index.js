@@ -1,5 +1,6 @@
 import './styles.css';
-import initializePlayer from './modules/initializePlayer';
+import createPlayer from './modules/createPlayer';
+import placeShips from './modules/placeShip';
 
 const gamePieces = [
   ['Carrier', 5],
@@ -9,5 +10,7 @@ const gamePieces = [
   ['Patrol Boat', 2],
 ];
 
-initializePlayer(gamePieces, 'p1');
-initializePlayer(gamePieces, 'robot');
+const playerOne = createPlayer(gamePieces, 'p1');
+placeShips(playerOne);
+console.log(playerOne.gameBoard.board);
+const playerRobot = createPlayer(gamePieces, 'robot');
