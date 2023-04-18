@@ -16,11 +16,11 @@ const ship = (name, size) => {
 };
 
 function createShips(ships) {
-  const shipArray = [];
+  const playerShips = {};
   ships.forEach((piece) => {
-    shipArray.push(ship(piece[0], piece[1]));
+    playerShips[piece[0]] = ship(piece[0], piece[1]);
   });
-  return shipArray;
+  return playerShips;
 }
 
 export default createShips;
