@@ -1,4 +1,4 @@
-const highlight = (x, y, ship, board) => function () {
+const highlight = (x, y, ship, board) => () => {
   if (checkFit(x, y, ship.size, ship.axis)) {
     if (ship.axis === 'X') {
       for (let i = 0; i < ship.size; i++) {
