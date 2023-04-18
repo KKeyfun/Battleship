@@ -29,6 +29,12 @@ h1 {
   text-align: center;
 }
 
+.rotate {
+  display: block;
+  margin: .25rem auto;
+  padding: .1rem .25rem;
+}
+
 .board.opponent {
   display: none;
 }
@@ -60,13 +66,15 @@ h1 {
 .tile {
   border: 1px solid black;
   flex-grow: 1;
+  flex-basis: 10%;
 }
 
 .highlight {
-  background-color: chartreuse;
+  background-color: rgb(156, 255, 57);
 }
 
 .invalid {
+  background-color: rgb(255, 118, 118);
   cursor: not-allowed;
 }
 
