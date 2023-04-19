@@ -35,10 +35,6 @@ h1 {
   padding: .1rem .25rem;
 }
 
-.board.opponent {
-  display: none;
-}
-
 .boardContainer {
   display: flex;
   gap:3rem;
@@ -55,6 +51,10 @@ h1 {
   margin: 0 auto;
   height: 30rem;
   width: 30rem;
+}
+
+.playerTwo {
+  display: none;
 }
 
 .row {
@@ -80,4 +80,12 @@ h1 {
 
 .ship {
   background-color: gray;
+}
+
+.hit {
+  background-color: rgb(255, 128, 149);
+}
+
+.miss {
+  background-color: rgb(134, 223, 223);
 }

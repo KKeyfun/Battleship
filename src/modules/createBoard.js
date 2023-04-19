@@ -10,15 +10,17 @@ function createBoard(player) {
   }
   return {
     board,
+    hitCoordinates: [],
     receiveAttack(x, y) {
       const tileObj = this.board[x][y];
-      if (tileObj) {
+      if (tileObj.isOccupied) {
         tileObj.ship.hit();
         tileObj.markHit();
-      } else {
-        tileObj.markMiss();
+        this.hitCoordinates.push([x, y]);
+        return 'hit';
       }
-      tileObj.element.removeEventListener('click', TBD);
+      tileObj.markMiss();
+      return 'missed';
     },
   };
 }

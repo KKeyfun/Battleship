@@ -1,4 +1,4 @@
-const highlight = (x, y, ship, board) => () => {
+const highlight = (x, y, ship, board, checkFit) => () => {
   if (checkFit(x, y, ship.size, ship.axis)) {
     if (ship.axis === 'X') {
       for (let i = 0; i < ship.size; i++) {
@@ -22,10 +22,6 @@ const clearBoard = (board) => function () {
     });
   });
 };
-
-function checkFit(x, y, size, axis) {
-  return (axis === 'X') ? (x + size - 1 <= 9) : (y + size - 1 <= 9);
-}
 
 export {
   highlight, clearBoard,
