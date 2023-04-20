@@ -1,16 +1,15 @@
 const ship = (name, size) => {
-  // eslint-disable-next-line prefer-const
-  let _hit = 0;
+  let hitsTaken = 0;
   return {
     name,
     size,
     coordinates: [],
     axis: 'X',
     hit() {
-      this._hit += 1;
+      hitsTaken += 1;
     },
     isSunk() {
-      return this.size === this.hit();
+      return size === hitsTaken;
     },
   };
 };
