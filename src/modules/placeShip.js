@@ -1,35 +1,34 @@
 import { highlight, clearBoard } from './placeShipStyling';
+import addMessage from './messageBox';
 
+// Waits for player to place all ships, and updates rotate function
 async function placeShips(player) {
   return new Promise((resolve) => {
     const rotate = document.querySelector('.rotate');
-    const message = document.querySelector('.message');
     (async function () {
       for (const ship in player.ships) {
         const shipObject = player.ships[ship];
-        message.textContent = `Now placing: ${shipObject.name}`;
+        addMessage(`Now placing: ${shipObject.name}`);
         rotate.addEventListener('click', rotateShip(shipObject));
         await addListeners(shipObject, player.gameBoard.board);
         rotate.removeEventListener('click', rotateShip(shipObject));
         removeListeners(player.gameBoard.board);
-        console.log('this should not fire until ship is placed');
       }
       return resolve();
     }());
   });
 }
 
-function placeShipsRobot(player) {
+// For automatically placing AI ships
+function placeShipsAuto(player) {
   const { board } = player.gameBoard;
-  console.log(board);
+  // console.log(board);
   for (const ship in player.ships) {
     const shipObject = player.ships[ship];
-    let x = generateRandomNumber();
-    let y = generateRandomNumber();
-
+    let [x, y] = generateRandomCoordinates(9);
+    shipObject.axis = (generateRandomNumber(2) == 0) ? 'X' : 'Y';
     while (!checkFit(x, y, shipObject.size, shipObject.axis) || checkCollisions(x, y, shipObject, board)) {
-      x = generateRandomNumber();
-      y = generateRandomNumber();
+      [x, y] = generateRandomCoordinates(9);
     }
 
     if (shipObject.axis === 'X') {
@@ -46,18 +45,27 @@ function placeShipsRobot(player) {
       }
     }
     shipObject.coordinates.forEach((coordinate) => {
-      board[coordinate[0]][coordinate[1]].element.classList.add('ship');
+      // board[coordinate[0]][coordinate[1]].element.classList.add('ship'); // For debugging
     });
-    console.log(shipObject.coordinates);
-    console.log(shipObject);
+    // console.log(shipObject.coordinates);
+    // console.log(shipObject);
   }
 }
 
-function generateRandomNumber() {
-  return Math.floor(Math.random() * 9);
+function generateRandomNumber(max) {
+  return Math.floor(Math.random() * (max + 1));
 }
 
-const map = {}; // used to store curried function references
+function generateRandomCoordinates(num) {
+  const x = generateRandomNumber(num);
+  const y = generateRandomNumber(num);
+
+  return [x, y];
+}
+
+const map = {}; // used to store curried function references for later removal
+
+// Adds styling for ship placement, and calls place function
 function addListeners(ship, board) {
   return new Promise((resolve) => {
     for (let y = 0; y < 10; y++) {
@@ -75,6 +83,7 @@ function addListeners(ship, board) {
   });
 }
 
+// Remove all listeners per ship
 const removeListeners = (board) => {
   board.forEach((column, x) => {
     column.forEach((tile, y) => {
@@ -89,8 +98,8 @@ const rotateShip = (ship) => function () {
   ship.axis = (ship.axis === 'X') ? 'Y' : 'X';
 };
 
+// Updates player's board and respective ship objects if placement is valid
 const place = (x, y, ship, board, resolve) => function () {
-  // event.target // get attributes x/y
   if (!checkCollisions(x, y, ship, board)) {
     if (ship.axis === 'X') {
       for (let i = 0; i < ship.size; i++) {
@@ -108,8 +117,8 @@ const place = (x, y, ship, board, resolve) => function () {
     ship.coordinates.forEach((coordinate) => {
       board[coordinate[0]][coordinate[1]].element.classList.add('ship');
     });
-    console.log(ship.coordinates);
-    console.log(ship);
+    // console.log(ship.coordinates);
+    // console.log(ship);
     return resolve();
   }
 };
@@ -132,4 +141,4 @@ function checkCollisions(x, y, ship, board) {
   return collisions;
 }
 
-export { placeShips, placeShipsRobot };
+export { placeShips, placeShipsAuto, checkFit };
