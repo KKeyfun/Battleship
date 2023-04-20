@@ -8,11 +8,18 @@
     <script src="index.js"></script>
 <script defer src="bundle.js"></script></head>
 <body>
+    <div class="overlay">
+        <div class="modalContainer">
+            <div class="modal">
+                <h2 class="modalText"></h2>
+                <button class="reset">Play Again</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <header>
             <h1 class="header">Battleship</h1>
         </header>
-        <div class="message"></div>
         <button class="rotate">Rotate</button>
         <div class="boardContainer">
             <div class="board playerOne">
@@ -259,6 +266,8 @@
                     <div class="tile" data-x="9" data-y="9"></div>
                 </div>
             </div>
+            <div class="messageContainer">
+        </div>
         </div>
     </div>
 </body>
